@@ -1,0 +1,66 @@
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar
+{
+  width: 4px;  /* for vertical scrollbars */
+  height: 4px; /* for horizontal scrollbars */
+  transition: .3s;
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid hidden;
+  height: 40px;
+  transition: .3s;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #23b45d;
+  border: 1px solid hidden;
+  border-radius:0px;
+  /* border-top: 100px solid #075e71; */
+  /* border-bottom: 100px solid #075e71; */
+  transition: .3s;
+}
+
+.myheader{
+}
+
+.mycontent{
+  margin-top: 40px;
+  height:calc(100% - 40px);
+  width: calc(100% + 200px);
+  /*overflow: scroll;*/
+}
+
+.mysidebar{
+  display: none;
+  width:200px;
+  height: 100%;
+  /*display: inline-block;*/
+  float: left;
+  background: #2b3e50;
+}
+
+.yielder{
+  width:calc(100% - 200px);
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.messbox{
+  padding: 10px;
+  background: #4E5D6C;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100% - 60px);
+}
+
+.myfooter{
+}

@@ -1,0 +1,16 @@
+<template name="sidebar">
+  <h2 style="margin-top:0px;">Users</h2>
+  <ul class="nav nav-pills nav-stacked">
+    {{#each users}}
+      <li class="user-list {{current _id}}"><a href="/chat/{{_id}}">{{username}}
+        <!-- {{#if hasNotifs username}} -->
+          <!-- <span class="glyphicon glyphicon-envelope pull-right" aria-hidden="true"></span> -->
+          {{#each notifs username}}
+            <span class="badge pull-right">{{unread}}</span>
+          {{/each}}
+        <!-- {{/if}} -->
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</template>

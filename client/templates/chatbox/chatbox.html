@@ -1,0 +1,63 @@
+<template name="chatbox">
+
+  <div class="messbox chat-content" id="chat-content">
+    {{#each messages}}
+      {{#if yourMessage sender}}
+      <div class="message" style="width:100%;">
+        <div class="col-md-7 pull-right" style="margin-bottom: -15px;">
+          <div class="panel panel-info  pull-right" style="width:auto;">
+            <div class="panel-heading" style="border-radius:0px !important;">
+              <h3 class="panel-title">{{{parseMessage message}}}</h3>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+      {{else}}
+      <div class="message pull-left" style="width:100%;">
+        <div class="col-md-7" style="margin-bottom: -15px;">
+          <div class="panel panel-success pull-left" style="width:auto;">
+            <div class="panel-heading" style="border-radius:0px !important;">
+              <h3 class="panel-title">{{{parseMessage message}}}</h3>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+  <div class="emotes-box" style="display:none;background:#81909E;height:100px; overflow-x:hidden; overflow-y:scroll;margin-top:-100px;z-index:99;position:relative;padding:5px;">
+    {{#each emotes}}
+        <button type="button" class="img-click" style="margin-bottom:5px;">{{{pic}}}</button>
+    {{/each}}
+  </div>
+  <div class="myfooter" style="padding:10px;background:#485563;">
+    <footer style="height:60px:margin:10px;">
+      {{#if currentUser}}
+        <form class="send-message">
+          <div class="form-group" style="margin-bottom:0px;">
+            <div class="input-group">
+              <input type="text" class="form-control" name="message" id="message" autocomplete="off">
+              <span class="input-group-btn">
+                <button class="btn btn-default show-emotes" type="button" style="background:#81909E;"><img src="/smile.png" height="30px" width="30px" style="margin:-10px;"/></button>
+              </span>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Send</button>
+              </span>
+            </div>
+          </div>
+        </form>
+        {{else}}
+        <div class="form-group" style="margin-bottom:0px;">
+          <div class="input-group">
+            <input type="text" class="form-control" value="You must be logged in in order to chat." readonly>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" disabled>Send</button>
+            </span>
+          </div>
+        </div>
+      {{/if}}
+    </footer>
+  </div>
+</template>
